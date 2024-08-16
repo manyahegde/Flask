@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+</head>
+<body>
+    <div class="main">
+        <h1> Body Mass Index Calculator</h1><br>
+        <p>Enter the below details.</p>
+        <form class="pure-form" method="POST" action="/">
+            Weight (in kgs): <input type="number" name="weight"><br><br>
+            Height (in cms): <input type="number" name="height"><br><br>
+            <button type="submit" class="pure-cutton pure-button-primary" value="Submit">Submit</button>
+        </form>
+    <br><br>
+    {% if weight and height %}
+        <p class="result">Your BMI: {{bmi }}</p>
+    {% endif %}
+    </div>
+</body>
+</html>

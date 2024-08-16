@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rendering HTML Template</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+</head>
+<h1>This is my root page</h1>
+<body>
+    <div>
+        <p>Please enter your name.</p>
+        <form class="pure-form" method="POST" action="/">
+            Name:<br>
+            <input type="text" name="username"><br>
+            Age: <br>
+            <input type="text" name="age"><br>
+            <button type="submit" class="pure-cutton pure-button-primary" value="Submit">Submit</button>
+        </form>
+    </div>
+    <br>
+    <div>
+        {% if name %}
+            <p>Welcome to my site {{ name }}!</p>
+        {% endif %}
+        {% if age %}
+            <p>Glad you survived for {{ age }} years!</p>
+        {% endif %}
+    </div>
+</body>
+</html>
